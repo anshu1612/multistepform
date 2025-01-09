@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </head>
+  <body class="bg-indigo-500/75">
+    <section
+      id="section1"
+      class="h-screen flex flex-col justify-center items-center"
+    >
+      <div
+        class="w-full sm:max-w-md bg-white border border-gray-400 p-6 rounded-lg"
+      >
+        <div class="flex mb-10 justify-center">
+          <button
+            class="w-8 h-8 text-white rounded-full bg-indigo-500/75"
+            type="button"
+          >
+            1
+          </button>
+          <div
+            class="h-10 w-28 border-t-4 my-4 border-solid border-indigo-500/75"
+          ></div>
+          <button
+            class="w-8 h-8 text-indigo-500/75 border-2 rounded-full bg-white border-indigo-500/75"
+            type="button"
+          >
+            2
+          </button>
+          <div
+            class="h-10 w-28 border-t-4 my-4 border-solid border-indigo-500/75"
+          ></div>
+          <button
+            class="w-8 h-8 text-indigo-500/75 border-2 rounded-full bg-white border-indigo-500/75"
+            type="button"
+          >
+            3
+          </button>
+        </div>
+        <form>
+          <div class="grid grid-cols-3 gap-y-3 gap-x-3">
+            <label for="user" class="col-span-1">User Name:</label>
+            <input
+              id="user"
+              class="py-1 px-3 col-span-2 focus-visible:outline-none border-2 border-solid border-indigo-500/75 rounded-lg focus:border-indigo-600"
+              type="text"
+              required
+            />
+            <label for="enrollment" class="col-span-1">Roll No.</label>
+            <input
+              id="enrollment"
+              class="py-1 px-3 col-span-2 focus-visible:outline-none border-2 border-solid border-indigo-500/75 rounded-lg focus:border-indigo-600"
+              type="number"
+              title="Only numbers are allowed"
+              maxlength="10"
+              required
+            />
+          </div>
+
+          <div class="w-full flex justify-end">
+            <button
+              id="nxtBtn1"
+              type="button"
+              class="mt-8 px-10 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section
+      id="section2"
+      class="hidden h-screen flex flex-col justify-center items-center"
+    >
+      <div
+        class="w-full sm:max-w-md bg-white border border-gray-400 p-6 rounded-lg"
+      >
+        <div class="flex mb-10 justify-center">
+          <button
+            class="w-8 h-8 text-white rounded-full bg-indigo-500/75"
+            type="button"
+          >
+            1
+          </button>
+          <div
+            class="h-10 w-28 border-t-4 my-4 border-solid border-indigo-500/75"
+          ></div>
+          <button
+            class="w-8 h-8 text-white rounded-full bg-indigo-500/75"
+            type="button"
+          >
+            2
+          </button>
+          <div
+            class="h-10 w-28 border-t-4 my-4 border-solid border-indigo-500/75"
+          ></div>
+          <button
+            class="w-8 h-8 text-indigo-500/75 border-2 rounded-full bg-white border-indigo-500/75"
+            type="button"
+          >
+            3
+          </button>
+        </div>
+        <form class="">
+          <div class="grid grid-cols-3 gap-y-3 gap-x-3">
+            <label for="city" class="col-span-1">City:</label>
+            <input
+              id="city"
+              class="p-1 px-3 col-span-2 focus-visible:outline-none border-2 border-solid border-indigo-500/75 rounded-lg focus:border-indigo-600"
+              type="text"
+              required
+            />
+
+            <label for="pincode" class="col-span-1">Pin Code:</label>
+            <input
+              class="p-1 px-3 col-span-2 focus-visible:outline-none border-2 border-solid border-indigo-500/75 rounded-lg focus:border-indigo-600"
+              id="pincode"
+              type="number"
+              title="Only numbers are allowed"
+              maxlength="6"
+              rewuired
+            />
+          </div>
+          <div class="w-full flex justify-between">
+            <button
+              id="prevBtn1"
+              type="button"
+              class="mt-8 px-10 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Previous
+            </button>
+            <button
+              id="nxtBtn2"
+              type="button"
+              class="mt-8 px-10 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section
+      id="section3"
+      class="hidden h-screen flex flex-col justify-center items-center"
+    >
+      <div
+        class="w-full sm:max-w-md bg-white border border-gray-400 p-6 rounded-lg"
+      >
+        <div class="flex mb-10 justify-center">
+          <button
+            class="w-8 h-8 text-white rounded-full bg-indigo-500/75"
+            type="button"
+          >
+            1
+          </button>
+          <div
+            class="h-10 w-28 border-t-4 my-4 border-solid border-indigo-500/75"
+          ></div>
+          <button
+            class="w-8 h-8 text-white rounded-full bg-indigo-500/75"
+            type="button"
+          >
+            2
+          </button>
+          <div
+            class="h-10 w-28 border-t-4 my-4 border-solid border-indigo-500/75"
+          ></div>
+          <button
+            class="w-8 h-8 text-white rounded-full bg-indigo-500/75"
+            type="button"
+          >
+            3
+          </button>
+        </div>
+        <form>
+          <div class="grid grid-cols-3 gap-y-3 gap-x-3">
+            <label for="college" class="col-span-1">College:</label>
+            <input
+              id="college"
+              class="p-1 px-3 col-span-2 focus-visible:outline-none border-2 border-solid border-indigo-500/75 rounded-lg focus:border-indigo-600"
+              type="text"
+              required
+            />
+
+            <label for="percentage" class="col-span-1">Percentage:</label>
+            <input
+              id="percentage"
+              class="p-1 px-3 col-span-2 focus-visible:outline-none border-2 border-solid border-indigo-500/75 rounded-lg focus:border-indigo-600"
+              type="number"
+              title="Only numbers are allowed"
+              maxlength="2"
+              required
+            />
+          </div>
+          <div class="w-full flex justify-between">
+            <button
+              id="prevBtn2"
+              type="button"
+              class="mt-8 px-10 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Previous
+            </button>
+            <button
+              id="nxtBtn3"
+              type="button"
+              class="mt-8 px-10 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Next
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section
+      id="section4"
+      class="hidden h-screen flex flex-col justify-center items-center"
+    >
+      <div
+        class="w-full sm:max-w-md bg-white border border-gray-400 p-6 rounded-lg"
+      >
+        <form>
+          <div class="grid grid-cols-3 gap-y-3 gap-x-3">
+            <label for="prevUser" class="col-span-1">User Name:</label>
+            <p id="prevUser" class="col-span-2"></p>
+
+            <label for="prevEnrollment" class="col-span-1">Enrollment:</label>
+            <p id="prevEnrollment" class="col-span-2">1234</p>
+
+            <label for="prevCity" class="col-span-1">City:</label>
+            <p id="prevCity" class="col-span-2">1234</p>
+
+            <label for="prevPincode" class="col-span-1">Pincode:</label>
+            <p id="prevPincode" class="col-span-2">1234</p>
+
+            <label for="prevCollege" class="col-span-1">College:</label>
+            <p id="prevCollege" class="col-span-2">1234</p>
+
+            <label for="prevPercentage" class="col-span-1">Percentage:</label>
+            <p id="prevPercentage" class="col-span-2">1234</p>
+          </div>
+          <div class="w-full flex justify-center">
+            <button
+              id="prevBtn3"
+              type="button"
+              class="mt-8 mr-3 px-6 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Previous
+            </button>
+            <button
+              id="downloadBtn"
+              type="button"
+              class="mt-8 mr-3 px-6 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Download
+            </button>
+            <button
+              id="nxtBtn3"
+              type="submit"
+              class="mt-8 px-6 py-2 rounded-lg text-lg bg-indigo-500/75 text-white hover:bg-indigo-600"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="/index.js"></script>
+  </body>
+</html>
